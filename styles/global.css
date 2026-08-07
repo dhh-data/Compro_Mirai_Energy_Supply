@@ -157,43 +157,57 @@ body.dark-mode {
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     z-index: 1000;
     background-color: var(--bg-glass);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
-    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    transition: box-shadow 0.3s ease, background-color var(--transition-speed), border-color var(--transition-speed);
+    will-change: transform;
+}
+
+/* Deeper shadow when user has scrolled */
+.header-wrapper.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12);
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 72px;
+    gap: 1rem;
+    flex-wrap: nowrap;
 }
 
 /* Brand Logo */
 .brand-logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--text-heading);
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .brand-logo img {
-    height: 48px;
+    height: 40px;
     width: auto;
+    display: block;
+    flex-shrink: 0;
 }
 
 /* Nav Menu */
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 2.25rem;
+    gap: 1.5rem;
+    flex-shrink: 1;
 }
 
 /* Nav Link Hover & Active Interactivity */
@@ -247,7 +261,14 @@ body.dark-mode {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.header-cta {
+    padding: 0.45rem 1rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
 }
 
 /* Dark Mode Switch Toggle */
@@ -366,12 +387,28 @@ body.dark-mode .theme-toggle {
     visibility: visible;
 }
 
+/* Compact nav text for mid-size screens */
+@media (max-width: 1200px) and (min-width: 993px) {
+    .nav-menu {
+        gap: 1.1rem;
+    }
+    .nav-link {
+        font-size: 0.875rem;
+    }
+    .brand-logo span {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 992px) {
     .nav-menu {
         display: none;
     }
     .menu-btn {
         display: flex;
+    }
+    .header-cta {
+        display: none;
     }
 }
 
@@ -668,6 +705,14 @@ body.dark-mode .hero-title {
     justify-content: center;
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.card-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--primary);
+    flex-shrink: 0;
 }
 
 body.dark-mode .card-icon {
