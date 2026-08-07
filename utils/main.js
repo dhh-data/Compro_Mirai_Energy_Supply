@@ -430,4 +430,14 @@ Status: Dikirim via Web SPA`;
     
     // Trigger router manually on initial start (covers reload or deep links)
     router();
+
+    // 6. Sticky header scroll shadow effect
+    const handleScroll = () => {
+        const header = document.getElementById("main-header");
+        if (header) {
+            header.classList.toggle("scrolled", window.scrollY > 10);
+        }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // run once on load
 })();
