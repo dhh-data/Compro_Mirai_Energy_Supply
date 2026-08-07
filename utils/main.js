@@ -5,7 +5,7 @@
 
 // Configuration
 const CONFIG = {
-    whatsappNumber: "6282121289181", // Business WhatsApp Number
+    whatsappNumber: "6282289479025", 
     components: {
         header: "components/header.html",
         sidebar: "components/sidebar.html",
