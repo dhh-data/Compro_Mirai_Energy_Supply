@@ -19,6 +19,9 @@ const CONFIG = {
         "detail_produk_1": { file: "pages/detail_produk_1.html", title: "Solid Recovered Fuel (SRF) | PT Mirai Energi Suplai" },
         "detail_produk_2": { file: "pages/detail_produk_2.html", title: "Cacahan Sekam Padi | PT Mirai Energi Suplai" },
         "detail_produk_3": { file: "pages/detail_produk_3.html", title: "Cacahan Bonggol Jagung | PT Mirai Energi Suplai" },
+        "detail_produk_4": { file: "pages/detail_produk_4.html", title: "Enercycle Fuel (ECF) | PT Mirai Energi Suplai" },
+        "detail_produk_5": { file: "pages/detail_produk_5.html", title: "Wood Chip (Serpihan Kayu) | PT Mirai Energi Suplai" },
+        "detail_produk_6": { file: "pages/detail_produk_6.html", title: "Wood Pellet (Pelet Kayu) | PT Mirai Energi Suplai" },
         "partnership": { file: "pages/partnership.html", title: "Kemitraan, Logistik & ESG | PT Mirai Energi Suplai" },
         "contact": { file: "pages/contact.html", title: "Hubungi Kami (Kemitraan B2B) | PT Mirai Energi Suplai" }
     },
