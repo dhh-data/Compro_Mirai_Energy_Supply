@@ -1,5 +1,5 @@
 /**
- * PT MIRAI ENERGI SUPLAI - MAIN JAVASCRIPT
+ * PT MIRAI ENERGY SUPPLY - MAIN JAVASCRIPT
  * SPA Routing, Dynamic Component Loading, Dark Mode, & WhatsApp Form Integration
  */
 
@@ -12,18 +12,16 @@ const CONFIG = {
         footer: "components/footer.html"
     },
     routes: {
-        "home": { file: "pages/home.html", title: "PT Mirai Energi Suplai | Energi Biomassa Berkelanjutan" },
-        "about": { file: "pages/about_us.html", title: "Tentang Kami | PT Mirai Energi Suplai" },
-        "about_us": { file: "pages/about_us.html", title: "Tentang Kami | PT Mirai Energi Suplai" },
-        "product": { file: "pages/product.html", title: "Katalog Produk | PT Mirai Energi Suplai" },
-        "detail_produk_1": { file: "pages/detail_produk_1.html", title: "Solid Recovered Fuel (SRF) | PT Mirai Energi Suplai" },
-        "detail_produk_2": { file: "pages/detail_produk_2.html", title: "Cacahan Sekam Padi | PT Mirai Energi Suplai" },
-        "detail_produk_3": { file: "pages/detail_produk_3.html", title: "Cacahan Bonggol Jagung | PT Mirai Energi Suplai" },
-        "detail_produk_4": { file: "pages/detail_produk_4.html", title: "Enercycle Fuel (ECF) | PT Mirai Energi Suplai" },
-        "detail_produk_5": { file: "pages/detail_produk_5.html", title: "Wood Chip (Serpihan Kayu) | PT Mirai Energi Suplai" },
-        "detail_produk_6": { file: "pages/detail_produk_6.html", title: "Wood Pellet (Pelet Kayu) | PT Mirai Energi Suplai" },
-        "partnership": { file: "pages/partnership.html", title: "Kemitraan, Logistik & ESG | PT Mirai Energi Suplai" },
-        "contact": { file: "pages/contact.html", title: "Hubungi Kami (Kemitraan B2B) | PT Mirai Energi Suplai" }
+        "home": { file: "pages/home.html", title: "PT Mirai Energy Supply | Connecting Earth, Industry, and People" },
+        "about": { file: "pages/about_us.html", title: "Tentang Kami | PT Mirai Energy Supply" },
+        "about_us": { file: "pages/about_us.html", title: "Tentang Kami | PT Mirai Energy Supply" },
+        "product": { file: "pages/product.html", title: "Produk | PT Mirai Energy Supply" },
+        "detail_produk_1": { file: "pages/detail_produk_1.html", title: "SRF (Solid Recovered Fuel) | PT Mirai Energy Supply" },
+        "detail_produk_2": { file: "pages/detail_produk_2.html", title: "Wood Pellet | PT Mirai Energy Supply" },
+        "service": { file: "pages/service.html", title: "Layanan & Jasa Pengeringan Biomassa | PT Mirai Energy Supply" },
+        "flamex": { file: "pages/flamex.html", title: "FLAMEX V1 - Kompor Biomassa Otomatis | PT Mirai Energy Supply" },
+        "partnership": { file: "pages/partnership.html", title: "Mitra & Klien | PT Mirai Energy Supply" },
+        "contact": { file: "pages/contact.html", title: "Hubungi Kami | PT Mirai Energy Supply" }
     },
     defaultRoute: "home"
 };
@@ -125,7 +123,7 @@ async function loadComponents() {
             }),
             fetchHtml(CONFIG.components.footer).catch(err => {
                 console.error("Footer Component Error:", err);
-                return `<footer class="footer-wrapper"><div class="container text-center"><p>&copy; PT Mirai Energi Suplai</p></div></footer>`;
+                return `<footer class="footer-wrapper"><div class="container text-center"><p>&copy; PT Mirai Energy Supply</p></div></footer>`;
             })
         ]);
 
@@ -287,7 +285,7 @@ async function router() {
 
     try {
         if (routeKey === "404") {
-            document.title = "Halaman Tidak Ditemukan | PT Mirai Energi Suplai";
+            document.title = "Halaman Tidak Ditemukan | PT Mirai Energy Supply";
             contentRoot.innerHTML = `
                 <section class="container section-padding text-center" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                     <h1 style="font-size: 6rem; color: var(--primary);">404</h1>
@@ -361,12 +359,12 @@ function initFormHandler() {
 
                 // Compose formatted text for WhatsApp B2B Client
                 const waMessage = 
-`*FORMULIR KEMITRAAN B2B - PT MIRAI ENERGI SUPLAI*
+`*FORMULIR KEMITRAAN - PT MIRAI ENERGY SUPPLY*
 
 *Nama Pengirim:* ${name}
 *Perusahaan:* ${company}
 *Alamat Email:* ${email}
-*Kategori Kemitraan:* ${productType}
+*Produk / Layanan:* ${productType}
 
 *Pesan / Deskripsi Kebutuhan:*
 _${message}_
